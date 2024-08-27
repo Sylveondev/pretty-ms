@@ -1,4 +1,4 @@
-let parseMilliseconds = require("parse-ms");
+import parseMilliseconds from 'parse-ms';
 
 const isZero = value => value === 0 || value === 0n;
 const pluralize = (word, count) => (count === 1 || count === 1n) ? word : `${word}s`;
@@ -6,8 +6,8 @@ const pluralize = (word, count) => (count === 1 || count === 1n) ? word : `${wor
 const SECOND_ROUNDING_EPSILON = 0.000_000_1;
 const ONE_DAY_IN_MILLISECONDS = 24n * 60n * 60n * 1000n;
 
-module.exports = async function prettyMilliseconds(milliseconds, options) {
-    const isBigInt = typeof milliseconds === 'bigint';
+export default function prettyMilliseconds(milliseconds, options) {
+	const isBigInt = typeof milliseconds === 'bigint';
 	if (!isBigInt && !Number.isFinite(milliseconds)) {
 		throw new TypeError('Expected a finite number or bigint');
 	}
