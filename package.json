@@ -46,7 +46,7 @@
 		"hrtime"
 	],
 	"dependencies": {
-		"parse-ms": "^4.0.0"
+		"parse-ms": "git+https://github.com/Sylveondev/parse-ms.git"
 	},
 	"devDependencies": {
 		"ava": "^6.0.1",
